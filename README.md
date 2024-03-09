@@ -3,9 +3,10 @@ Android League Displays is a port of [Open League Displays](https://github.com/K
 
 With Android League Displays, you can easily set cropped high-resolution wallpapers to the home or lock screen of your Android device.
 
-![Screenshot1](docs/screenshot1.jpg)
-![Screenshot2](docs/screenshot2.jpg)
-![Screenshot3](docs/screenshot3.jpg)
+<img src="docs/screenshot1.jpg" width="500" alt="screenshot 1">
+<img src="docs/screenshot2.jpg" width="500" alt="screenshot 2">
+<img src="docs/screenshot3.jpg" width="500" alt="screenshot 3">
+
 
 ## Build for android
 Given you have installed everything required for Capacitor to work with android, you simply have to: 
