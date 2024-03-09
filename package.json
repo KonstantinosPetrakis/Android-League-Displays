@@ -1,21 +1,31 @@
 {
-  "name": "test-wallpaper",
+  "name": "leaguedisplays",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "auto-android-build": "npm i && npx cap add android && npx capacitor-assets generate && npm run build && npx cap sync && cd android && ./gradlew assembleDebug"
   },
   "dependencies": {
+    "@capacitor/android": "^5.7.0",
+    "@capacitor/app": "^5.0.7",
+    "@capacitor/cli": "^5.7.0",
+    "@capacitor/core": "^5.7.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "croppie": "^2.6.5",
+    "croppr": "^2.3.1",
+    "md5": "^2.3.0",
+    "vue": "^3.2.13",
+    "vue-router": "4",
+    "wallpaper": "https://github.com/KonstantinosPetrakis/capacitor-wallpaper"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@capacitor/assets": "^3.0.4",
     "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"

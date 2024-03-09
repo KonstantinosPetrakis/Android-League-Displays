@@ -1,24 +1,15 @@
-# test-wallpaper
+#  Android League Displays
+Android League Displays is a port of [Open League Displays](https://github.com/KonstantinosPetrakis/open-league-displays), another open-source project I developed, to Android. This was achieved by leveraging [Capacitor](https://capacitorjs.com/).
 
-## Project setup
-```
-yarn install
-```
+With Android League Displays, you can easily set cropped high-resolution wallpapers to the home or lock screen of your Android device.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+![Screenshot1](docs/screenshot1.jpg)
+![Screenshot2](docs/screenshot2.jpg)
+![Screenshot3](docs/screenshot3.jpg)
 
-### Compiles and minifies for production
+## Build for android
+Given you have installed everything required for Capacitor to work with android, you simply have to: 
 ```
-yarn build
+npm run auto-android-build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+And then collect the apk file from `./android/app/build/outputs/apk/debug/`
