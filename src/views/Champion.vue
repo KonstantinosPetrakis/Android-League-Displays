@@ -8,6 +8,7 @@ import OffCanvas from "@/components/ui/OffCanvas.vue";
 import Spinner from "@/components/ui/Spinner.vue";
 import { getEstimatedScreenDims } from "@/utils";
 import { getChampions } from "@/db";
+import { almostEqual } from "@/utils";
 
 
 const route = useRoute();
@@ -38,11 +39,17 @@ const onConfigStart = (image) => {
         width: Math.ceil(screenDims.width * screenScale),
         height: Math.ceil(screenDims.height * screenScale)
     }
+    console.log(scaledScreenDims.width, scaledScreenDims.height);
 
     imageCrop.value.setAttribute("src", image.src);
     cropper = new Croppr(imageCrop.value, {
         maxSize: [scaledScreenDims.width, scaledScreenDims.height, "px"],
-        minSize: [scaledScreenDims.width, scaledScreenDims.height, "px"]
+        minSize: [scaledScreenDims.width, scaledScreenDims.height, "px"],
+        // https://github.com/jamesssooi/Croppr.js/issues/60 (onCropEnd is a stupid fix for the issue)
+        onCropEnd(data) {
+            if (!almostEqual(scaledScreenDims.height, data.height) || !almostEqual(scaledScreenDims.width, data.width))
+                cropper.reset();
+        }
     });
 }
 

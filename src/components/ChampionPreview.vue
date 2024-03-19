@@ -24,6 +24,7 @@ const props = defineProps({champion: { type: Object, required: true}});
         width: 100%;
         clip-path: inset(0% 0% 25% 0%);
         margin-bottom: -46%;
+        aspect-ratio: 308 / 560; /* the aspect ratio of splash arts */
         /* 
             margin-bottom is a magic number, 25% should be the right from the clip-path but that
             won't work as intended.
@@ -44,7 +45,7 @@ const props = defineProps({champion: { type: Object, required: true}});
 
 <template>
     <router-link :to="{name: 'champion', params: {id: champion.id} }" class="champion">
-        <img :src="champion.imgUrl" :alt="`image of ${champion.id}`">
+        <img loading="lazy" :src="champion.imgUrl" :alt="`image of ${champion.id}`">
         <div class="champion-name"> {{ champion.name }} </div>
     </router-link>
 </template>

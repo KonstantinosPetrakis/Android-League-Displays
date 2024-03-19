@@ -73,6 +73,8 @@ const activeProxy = computed({
     }
     .simple-button {
         all: unset;
+        display: flex;
+        flex-direction: column;
     }
     .simple-button:empty {
         display: none;

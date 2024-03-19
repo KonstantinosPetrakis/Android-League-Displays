@@ -20,7 +20,6 @@ export async function fetchImageAsBase64(url) {
         return response.data;
     }
     catch (error) { throw new Error("Image not found.") }
-
 }
 
 
@@ -53,4 +52,9 @@ export function getEstimatedScreenDims() {
         });
     
     return JSON.parse(localStorage.getItem("screenDims"));
+}
+
+
+export function almostEqual(a, b, perTolerance=0.02) {
+    return Math.abs(a - b) < perTolerance * Math.min(a, b);
 }

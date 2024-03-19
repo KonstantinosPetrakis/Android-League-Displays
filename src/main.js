@@ -16,7 +16,8 @@ const router = createRouter({
         { path: '/favorites', component: Favorites, name: "favorites"},
         { path: '/information', component: Information, name: "information"},
         { path: '/champion/:id', component: Champion, name: "champion"},
-    ]
+    ],
+    scrollBehavior () { document.querySelector("#app main").scrollTo(0, 0) }
 });
 
 checkForAndApplyUpdates().then(() => createApp(App).use(router).mount('#app'));

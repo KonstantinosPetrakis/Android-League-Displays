@@ -15,7 +15,7 @@ import Footer from './components/AppFooter.vue';
     }
     main {
         padding: 1.5rem;
-        overflow: auto;
+        overflow-y: auto;
         margin-bottom: auto;
     }
     h3 {

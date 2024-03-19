@@ -61,8 +61,10 @@ function _isFavorite() {
 
 </script>
 
-<style scoped>
+<style>
     .skin-preview {
+        display: flex;
+        flex-direction: column;
         border: 1px solid #f0e6d214;
         transition: border .6s;
     }
@@ -70,21 +72,21 @@ function _isFavorite() {
         border: 1px solid #ddbb7850;
         transition: border .6s;
     }
-    h4 {
+    .skin-preview h4 {
         color: #b7b0a3;
         text-transform: none; 
         margin: .3rem;
         display: -webkit-box; /* Set the display property to a box layout */
         -webkit-line-clamp: 1; /* Limit the text to one line */
         -webkit-box-orient: vertical; /* Set the box orientation to vertical */
-        overflow: hidden; /* Hide the overflow */
+       
         text-overflow: ellipsis; /* Add the ellipsis at the end of the visible text */
     }
-    img {
-        display: block;
-        width: 100%;
+    .skin-preview img {
+        width: 100% ;
+        aspect-ratio: 1215 / 717;
     }
-    .buttons {
+    .skin-preview .buttons {
         display: flex;
         background-color: #010407;
         z-index: 1;
@@ -92,7 +94,7 @@ function _isFavorite() {
     .buttons button:first-child {
         border-right: none;
     }
-    button {
+    .skin-preview button {
         all: unset;
         width: 50%;
         padding: .5rem;
@@ -104,7 +106,7 @@ function _isFavorite() {
         border: 1px solid #313135ca;
         transition: color .3s;
     }
-    button:hover {
+    .skin-preview button:hover {
         cursor: pointer;
         color: #c3beb2;
         transition: color .3s;
@@ -115,9 +117,9 @@ function _isFavorite() {
     <div class="skin-preview">
         <off-canvas :compact="true" :exit-button="false" :exit-on-click="true">
             <h4> {{ skin.name }} </h4>
-            <img :src="skin.lowResUrl" :alt="`Image of ${skin.name}`">
+            <img loading="lazy" :src="skin.lowResUrl" :alt="`Image of ${skin.name}`">
             <template #off-canvas>
-                <img :src="skin.lowResUrl" :alt="`Image of ${skin.name}`">
+                <img loading="lazy" :src="skin.lowResUrl" :alt="`Image of ${skin.name}`">
             </template>
         </off-canvas>
         <div class="buttons">
